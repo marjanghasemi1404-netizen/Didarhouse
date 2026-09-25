@@ -1,0 +1,73 @@
+:root{--cream:#fbf7f3;--blush:#f4e1dd;--plum:#3d2a33;--muted:#6f5a63;--rose:#a95c6c;--sage:#6f8467;--line:#e3d2cd}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Vazirmatn',Tahoma,sans-serif;background:var(--cream);color:var(--plum);line-height:2}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+header{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 32px;padding:12px 5vw;background:rgba(251,247,243,.94);border-bottom:1px solid var(--line)}
+.logo{font-weight:800;font-size:1.15rem;color:var(--sage);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:2px 24px;font-size:.92rem}
+nav a{text-decoration:none;color:var(--muted);border-bottom:2px solid transparent}
+nav a:hover{color:var(--plum);border-color:var(--rose)}
+section{padding:80px 5vw;max-width:1100px;margin:auto}
+h1{font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1.9;font-weight:700}
+h2{font-size:1.9rem;line-height:1.6;font-weight:800;margin-bottom:20px;color:var(--sage)}
+h3{font-size:1.25rem;font-weight:700}
+.btn{display:inline-block;font-family:inherit;font-size:1rem;background:var(--rose);color:#fff;padding:10px 34px;border:0;border-radius:40px;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--plum)}
+.hero{max-width:none;background:linear-gradient(180deg,var(--blush),var(--cream));display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center;padding:64px max(5vw,calc((100vw - 1100px)/2))}
+.poem{font-size:.98rem;color:var(--muted);margin:22px 0 30px}
+.hero-photo{width:100%;max-width:400px;aspect-ratio:2/3;object-fit:cover;border-radius:200px 200px 24px 24px;margin:auto}
+.sides-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.sides-grid div{padding:0 28px;border-right:2px solid var(--rose)}
+.sides-grid p,.row p,dd,.workshop p,.gallery p{color:var(--muted)}
+.story{max-width:760px}
+.story p{margin-bottom:20px}
+.coaching .row{display:grid;grid-template-columns:1fr 2.3fr;gap:32px;padding:32px 0;border-top:1px solid var(--line)}
+dl{margin-top:18px}
+dt{font-weight:700;margin-top:12px}
+.workshop{max-width:none;background:var(--blush);text-align:center;padding-inline:max(5vw,calc((100vw - 700px)/2))}
+.workshop .sub{font-weight:700;color:var(--rose);margin-top:-12px}
+.workshop .btn{margin-top:22px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.gallery-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.contact ul{list-style:none;margin-top:18px}
+form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px}
+label{display:block;margin:10px 0 2px;font-size:.9rem}
+input,textarea{width:100%;font:inherit;padding:9px 14px;border:1px solid var(--line);border-radius:12px;background:var(--cream)}
+form .btn{margin-top:18px}
+footer{background:var(--plum);color:#fff;text-align:center;padding:28px 5vw}
+
+/* منوی کشویی «خدمات» — روی گوشی با تپ باز/بسته می‌شه چون هاور نداریم */
+nav .dropdown{position:relative}
+nav .dropdown-menu{display:none;position:absolute;top:100%;right:0;background:#fff;min-width:190px;max-width:90vw;box-shadow:0 6px 18px rgba(0,0,0,.12);border-radius:10px;padding:8px 0;z-index:20}
+nav .dropdown-menu a{display:block;padding:8px 18px;white-space:nowrap;border-bottom:0}
+nav .dropdown:hover .dropdown-menu,
+nav .dropdown.open .dropdown-menu{display:block}
+.coaching .row .btn{display:inline-block;margin-top:16px}
+
+@media(max-width:760px){
+  section{padding:48px 6vw}
+  .contact,.coaching .row,.sides-grid,.gallery-grid{grid-template-columns:1fr}
+  .sides-grid div{padding:14px 0;margin-bottom:6px;border-right:0;border-bottom:1px solid var(--line)}
+  .sides-grid div:last-child{border-bottom:0}
+  .gallery-grid img{aspect-ratio:4/3}
+  .coaching .row{gap:6px;padding:24px 0}
+
+  /* هدر: لوگو بالا وسط، منو زیرش یک ردیف تمیز و وسط‌چین */
+  header{flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px 5vw;text-align:center}
+  .logo{font-size:1.05rem}
+  nav{justify-content:center;gap:6px 16px;font-size:.82rem}
+  nav .dropdown{position:static}
+  nav .dropdown-menu{left:50%;right:auto;transform:translateX(-50%);text-align:center}
+
+  /* هیرو: متن وسط‌چین و فشرده، عکس زیرش */
+  .hero{grid-template-columns:1fr;text-align:center;padding:36px 6vw;gap:30px}
+  .hero-text{display:flex;flex-direction:column;align-items:center}
+  h1{font-size:1.45rem;line-height:1.85}
+  .poem{font-size:.9rem;margin:16px 0 4px;max-width:340px}
+  .hero-photo{max-width:250px}
+}
+
